@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гангста</title>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 768px)">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/anim.css">
+</head>
+<body>
+    <header>
+        <div class="left">
+            <box-icon name='user-circle' color="#ffffff"></box-icon>
+            <a href="./index.html"><button class="vas">Главная</button></a>
+            <button class="biblia">Библиотека</button>
+        </div>
+        <div class="right">
+            <box-icon name='search-alt-2'></box-icon>
+            <box-icon name='cog' ></box-icon>
+        </div>
+    </header>
+
+    <main>
+        <div class="first">
+            <img src="./img/gangsta.jpeg" alt="" class="gantimg">
+            <p>Гангста</p>
+            <div class="dropdown">
+                <button class="dropdownButton" id="dropdownButton">+ Добавить в список ▼</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="updateList('Смотрю', 'watching')">Смотрю</a>
+                    <a href="#" onclick="updateList('Просмотрено', 'watched')">Просмотрено</a>
+                    <a href="#" onclick="updateList('Отложено', 'paused')">Отложено</a>
+                    <a href="#" onclick="updateList('Брошено', 'dropped')">Брошено</a>
+                    <a href="#" onclick="updateList('Запланировано', 'planned')">Запланировано</a>
+                    <a href="#" onclick="updateList('Пересматриваю', 'rewatching')">Пересматриваю</a>
+                </div>
+            </div>
+        </div>
+        <div class="infor">
+            <div class="info-item">
+                <div class="label">Тип</div>
+                <div class="value">ТВ Сериал</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Эпизоды</div>
+                <div class="value">12</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Статус</div>
+                <div class="value">Вышел</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Жанр</div>
+                <div class="value">Драма, Сэйнэн, Экшен</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Первоисточник</div>
+                <div class="value">Манга</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Сезон</div>
+                <div class="value">Лето 2015</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Выпуск</div>
+                <div class="value">с 2 июля 2015 по 24 сентября 2015</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Студия</div>
+                <div class="value">Manglobe</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Рейтинг MPAA</div>
+                <div class="value">NC-17</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Возрастные ограничения</div>
+                <div class="value">18+</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Длительность</div>
+                <div class="value">23 мин. ~ серия</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Озвучка</div>
+                <div class="value">AniDUB, AniLibria</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Режиссёр</div>
+                <div class="value">Сюко Мурасэ</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Снят по манге</div>
+                <div class="value">Гангста</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Автор оригинала</div>
+                <div class="value">Kohske</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Главные герои</div>
+                <div class="value">Worick Arcangelo (озвучивает Дзюнъити Сувабэ, Аюму Мурасэ), Alex Benedetto (озвучивает Мамико Ното), Nicolas Brown (озвучивает Кэндзиро Цуда, Нацуки Ханаэ)</div>
+            </div>
+        </div>
+        <div class="imginf">
+            <img src="./img/ganst/1.jpg" alt="Image 1" class="thumbnail">
+            <img src="./img/ganst/2.jpg" alt="Image 2" class="thumbnail">
+            <img src="./img/ganst/3.jpg" alt="Image 3" class="thumbnail">
+            <iframe width="250" height="100" src="https://www.youtube.com/embed/llcwN3KvuXA" title="TVアニメ『GANGSTA.(ギャングスタ）』PV02" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="thumbnail"></iframe>
+        </div>
+        <div id="modal" class="modal">
+            <span id="close" class="close">&times;</span>
+            <div id="modal-content" class="modal-content"></div>
+        </div>
+        <div class="container">
+            <div class="video-player">
+                <iframe id="video" src="//kodik.info/seria/140453/669e21552000ac15f2a034974a6a5ee1/720p" width="807" height="560" frameborder="0" allowfullscreen></iframe>
+            </div>
+    
+            <div class="episode-buttons">
+                <button onclick="changeEpisode(1)">Эпизод 1</button>
+                <button onclick="changeEpisode(2)">Эпизод 2</button>
+                <button onclick="changeEpisode(3)">Эпизод 3</button>
+                <button onclick="changeEpisode(4)">Эпизод 4</button>
+                <button onclick="changeEpisode(5)">Эпизод 5</button>
+                <button onclick="changeEpisode(6)">Эпизод 6</button>
+                <button onclick="changeEpisode(7)">Эпизод 7</button>
+                <button onclick="changeEpisode(8)">Эпизод 8</button>
+                <button onclick="changeEpisode(9)">Эпизод 9</button>
+                <button onclick="changeEpisode(10)">Эпизод 10</button>
+                <button onclick="changeEpisode(11)">Эпизод 11</button>
+                <button onclick="changeEpisode(12)">Эпизод 12</button>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <script src="./js/drop.js"></script>
+    <script src="./js/videos.js"></script>
+    <script src="./js/imgop.js"></script>
+</body>
+</html>

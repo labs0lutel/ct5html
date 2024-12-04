@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.gantimg{
+    width: 250px;
+    margin-left: 350px;
+    margin-top: 80px;
+}
+
+.first p{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 650px;
+    margin-top: -370px;
+}
+
+.dropdown {
+    font-family: Arial, sans-serif;
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 350px;
+    margin-left: 360px;
+}
+
+#dropdownButton{
+    width: 200px;
+    height: 50px;
+    position: relative;
+    top: 300px;
+    margin-left: 360px;
+    font-size: 18px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.watching {
+    color: #0c5460;
+    width: 200px;
+    height: 50px;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+.watched {
+    color: #155724;
+    width: 200px;
+    height: 50px;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.paused {
+    width: 200px;
+    height: 50px;
+    background-color: #ebeef1;
+    border-color: #dbe0e6;
+}
+.dropped {
+    color: #721c24;
+    width: 200px;
+    height: 50px;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.planned {
+    color: #856404;
+    width: 200px;
+    height: 50px;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+.rewatching {
+    color: #0c5460;
+    width: 200px;
+    height: 50px;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.icon {
+    margin-left: 10px;
+}
+
+.watching-icon::before {
+    content: "👁️";
+}
+
+.watched-icon::before {
+    content: "✔️";
+}
+
+.paused-icon::before {
+    content: "⏸️";
+}
+
+.dropped-icon::before {
+    content: "❌";
+}
+
+.planned-icon::before {
+    content: "⏰";
+}
+
+.rewatching-icon::before {
+    content: "🔄";
+}
+
+.infor{
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%; 
+    max-width: 1000px; 
+    padding: 15px;
+    margin-top: 20px;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+    max-height: 800px; 
+    margin-left: 650px;
+    margin-top: -90px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    padding: 6px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.info-item:hover {
+    background-color: #f1f1f1;
+}
+
+.info-item .label {
+    font-weight: bold;
+    color: #000000;
+    font-size: 0.9em;
+}
+
+.info-item .value {
+    font-size: 0.8em;
+    color: #555;
+    font-style: italic;
+    text-align: right;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.imginf {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.imginf img, .imginf iframe {
+    width: 450px;
+    height: 250px;
+    object-fit: cover;
+    cursor: pointer; 
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+}
+
+.modal img, .modal iframe {
+    width: 100%;
+    height: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.container {
+    text-align: center;
+    max-width: 640px;
+    width: 100%;
+    margin-left: 500px;
+    margin-top: 35px;
+}
+
+.video-player {
+    margin-bottom: 20px;
+}
+
+.episode-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.episode-buttons button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.episode-buttons button:hover {
+    background-color: #45a049;
+}
+
+.episode-buttons button.active {
+    background-color: #f44336;
+}
